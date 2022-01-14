@@ -17,17 +17,22 @@ export default {
       camera: null,
       scene: null,
       renderer: null,
+      container: null,
       mesh: null
     }
   },
   methods: {
     init: function() {
+
+      this.container = document.getElementById( 'canvas' );
+      document.body.appendChild( this.container );
+
+      this.renderer = new THREE.WebGLRenderer();
+      this.renderer.setSize( 500, 500 ); 
+      this.container.appendChild( this.renderer.domElement );
+
 			this.scene = new THREE.Scene();
 			this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-			this.renderer = new THREE.WebGLRenderer();
-			this.renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( this.renderer.domElement );
 
 			let geometry = new THREE.BoxGeometry();
 			let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
