@@ -1,15 +1,13 @@
 <template>
-  <hello-world />
+  <TJM/>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import TJM from '../components/threeJsMap'
 
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+export default {
+  components: {
+    TJM,
+  },
+}
 </script>
